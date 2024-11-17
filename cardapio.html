@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delícias Culinárias</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f3f4f6;
+        }
+
+        header {
+            background-color: #ff2929;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-left: 15px;
+        }
+
+        /* Estilo das abas */
+        .tab {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd;
+            cursor: pointer;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+        }
+
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .tab button:hover {
+            background-color: #ff2929;
+        }
+
+        .tab button.active {
+            background-color: #ff2929;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Conteúdo das abas */
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            animation: fadeEffect 0.5s;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tabcontent img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabcontent h3 {
+            font-size: 1.8em;
+            color: #ff2929;
+            margin: 10px 0;
+        }
+
+        .tabcontent p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #ff2929;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+                margin-top: 10px;
+            }
+
+            .tab {
+                flex-direction: column;
+            }
+
+            .tab button {
+                font-size: 14px;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .tabcontent h3 {
+                font-size: 1.5em;
+            }
+
+            .tabcontent p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                height: 40px;
+            }
+
+            .tabcontent h3 {
+                font-size: 1.3em;
+            }
+
+            .tabcontent p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="loguinho.png" alt="Logo Delícias Culinárias">
+        <h1>Delícias Culinárias</h1>
+    </header>
+
+    <!-- Abas de Navegação -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Prato1')" id="defaultOpen">Prato 1</button>
+        <button class="tablinks" onclick="openTab(event, 'Prato2')">Prato 2</button>
+        <button class="tablinks" onclick="openTab(event, 'Prato3')">Prato 3</button>
+    </div>
+
+    <!-- Conteúdo das Abas -->
+    <div id="Prato1" class="tabcontent">
+        <h3>Prato 1 - Salada Caesar</h3>
+        <p>Uma refrescante combinação de verduras, frango e tomates frescos para alegrar seu dia.</p>
+        <img src="SALADA.HTML" alt="Uma Salada Caesar com verduras frescas e frango grelhado.">
+            <br> 
+            <h4>Ingredientes:</h4>
+            <ul>
+                <br>
+
+                <li>1 pé de alface romana (ou alface americana)</li>
+                <li>200g de peito de frango grelhado (em tiras ou cubos)</li>
+                <li>50g de queijo parmesão (ralado ou em lascas)</li>
+                <li>Croutons (pão torrado em cubos)</li>
+                <li>Pimenta-do-reino a gosto</li>
+            </ul>
+            <br>
+            <br>
+            <h4>Para o Molho Caesar:</h4>
+            <ul>
+                <br>
+                
+                <li>1/2 xícara de maionese</li>
+                <li>1 colher de sopa de mostarda</li>
+                <li>1 colher de sopa de molho inglês</li>
+                <li>1 dente de alho (picado ou amassado)</li>
+                <li>Suco de 1 limão</li>
+                <li>Sal e pimenta-do-reino a gosto</li>
+                <li>Opcional: 2 colheres de sopa de queijo parmesão ralado</li>
+            </ul>
+        <br>
+        <br>
+            <h4>Modo de Preparo:</h4>
+            <ol>
+                <br>
+
+                <li>Em uma tigela, misture a maionese, a mostarda, o molho inglês, o alho picado e o suco de limão.</li>
+                <li>Tempere com sal e pimenta-do-reino a gosto. Reserve.</li>
+                <li>Lave as folhas de alface e corte em pedaços grandes. Coloque em uma tigela.</li>
+                <li>Adicione o frango grelhado sobre a alface.</li>
+                <li>Regue com o molho, adicione os croutons e o queijo parmesão. Misture e sirva imediatamente.</li>
+            </ol>
+        </p>
+    
+    </div>
+
+    <div id="Prato2" class="tabcontent">
+        <h3>Prato 2 - Parmegiana de Carne</h3>
+        <p>Uma receita clássica brasileira com molho de tomate, carne de qualidade acompanhado de um bom queijo muçarela.</p>
+            <img src="pg.html" alt="Parmegiana de Carne com molho de tomate e queijo muçarela.">
+            <br>
+             <br>
+            <h4>Ingredientes:</h4>
+            <ul>
+                <br>
+                <br>
+                <li>500g de filé mignon ou contrafilé em bifes</li>
+                <li>Sal e pimenta-do-reino a gosto</li>
+                <li>1 xícara de farinha de trigo</li>
+                <li>2 ovos batidos</li>
+                <li>1 xícara de farinha de rosca (ou pão ralado)</li>
+                <li>Óleo para fritar</li>
+                <li>300g de molho de tomate (caseiro ou de lata)</li>
+                <li>200g de queijo muçarela fatiado</li>
+                <li>Queijo parmesão ralado a gosto</li>
+                <li>Salsinha picada para decorar (opcional)</li>
+            </ul>
+    <br>
+            <h4>Modo de Preparo:</h4>
+            <ol>
+                <br>
+                <br>
+                <li>Tempere os bifes de carne com sal e pimenta-do-reino a gosto.</li>
+                <li>Empane: Passe cada bife na farinha de trigo, depois no ovo batido e, por último, na farinha de rosca.</li>
+                <li>Frite os bifes empanados em óleo quente até dourar dos dois lados. Escorra em papel toalha.</li>
+                <li>Monte em um refratário: Coloque um pouco de molho de tomate no fundo, adicione uma camada de bifes, cubra com mais molho, queijo muçarela e parmesão. Repita as camadas.</li>
+                <li>Leve ao forno preaquecido a 180°C por 15-20 minutos, até o queijo derreter e dourar.</li>
+            </ol>
+        </p>
+    
+    </div>
+
+    <div id="Prato3" class="tabcontent">
+        <h3>Prato 3 - Strogonoff de frango</h3>
+        <p>Uma delícia irresistível de frango com cobertura cremosa de creme com molho inglês, acompanhado de batata palha e arroz feito com especiarias da casa.</p>
+            <img src="st.html" alt="Strogonoff de frango com creme e batata palha.">
+        <ul>
+            <h4>Ingredientes:</h4>
+            <ul>
+                <br>
+            
+                <li>500g de peito de frango em cubos</li>
+                <li>1 cebola média picada</li>
+                <li>2 dentes de alho picados</li>
+                <li>200g de champignon fatiado (pode ser em conserva)</li>
+                <li>1 colher de sopa de mostarda</li>
+                <li>1 colher de sopa de ketchup</li>
+                <li>200ml de creme de leite</li>
+                <li>2 colheres de sopa de óleo ou manteiga</li>
+                <li>Sal e pimenta-do-reino a gosto</li>
+                <li>Salsinha picada para decorar</li>
+                <li>Arroz branco e batata palha para acompanhar</li>
+            </ul>
+    <br>
+    <br>
+            <h4>Modo de Preparo:</h4>
+            <ol>
+                <br>
+                
+                <li>Em uma panela, aqueça o óleo ou manteiga e refogue a cebola e o alho até dourar.</li>
+                <li>Adicione o frango em cubos e cozinhe até dourar.</li>
+                <li>Acrescente o champignon e refogue por mais alguns minutos.</li>
+                <li>Adicione a mostarda e o ketchup, misturando bem.</li>
+                <li>Reduza o fogo e adicione o creme de leite, mexendo até aquecer. Tempere com sal e pimenta-do-reino.</li>
+            </ol>
+            <br>
+            <br>
+<h2>Dicas:</h2>
+
+<li>Você pode adicionar outros temperos a gosto, como molho inglês ou ervas finas.
+Se preferir um strogonoff mais consistente, pode usar amido de milho diluído em água para engrossar o molho.</li>
+        </p>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p><strong>Delivery:</strong> Ligue para (11) 1234-5678</p>
+        <p><strong>E-mail:</strong> <a href="mailto:deliciasculinarias@example.com">deliciasculinarias@example.com</a></p>
+        <p>
+            <strong>Siga-nos:</strong>
+            <a href="https://facebook.com/deliciasculinarias" target="_blank">Facebook</a> |
+            <a href="https://instagram.com/deliciasculinarias" target="_blank">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        // Função para abrir a aba correspondente
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+
+            // Esconde todas as abas
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove a classe "active" dos botões das abas
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Exibe a aba selecionada e adiciona a classe "active" ao botão
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Abre a aba padrão ao carregar a página
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
